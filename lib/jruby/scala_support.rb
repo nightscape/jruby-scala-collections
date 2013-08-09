@@ -106,6 +106,10 @@ module JRuby::ScalaSupport
           hash[key.as_json(options)] = value.as_json(options)
         end
       end
+
+      def ==(other)
+        self.empty? && other.empty?
+      end
     end
 
     class Immutable
